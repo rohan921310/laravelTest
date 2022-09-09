@@ -16,7 +16,7 @@ class HomepageController extends Controller
      */
     public function index()
     {
-        return view('welcome', ['data' => []]);
+        return view('welcome', ['data' => [], 'segment1'=> 'show']);
     }
 
     public function search(Request $request)
