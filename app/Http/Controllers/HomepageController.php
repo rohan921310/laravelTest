@@ -16,7 +16,7 @@ class HomepageController extends Controller
      */
     public function index()
     {
-        return view('welcome', ['data' => [], 'segment1'=> 'show']);
+        return view('shows', ['data' => [], 'segment1'=> 'show','search'=>'']);
     }
 
     public function search(Request $request)
@@ -24,6 +24,6 @@ class HomepageController extends Controller
         $response = Http::get('http://api.tvmaze.com/search/shows?q=' . $request->search);
         $response = json_decode($response);
         
-        return view('shows', ['data' => $response, 'segment1'=> 'show']);
+        return view('shows', ['data' => $response, 'segment1'=> 'show','search'=>$request->search]);
     }
 }

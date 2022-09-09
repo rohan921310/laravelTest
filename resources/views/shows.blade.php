@@ -5,7 +5,7 @@
         <form action="{{ url('shows') }}" method="POST">
             <div class="input-group">
                 @csrf
-                <input type="search" id="searchShow" name="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+                <input type="search" id="searchShow" value="{{ ($search != '') ? $search : '' }}" name="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
                 <button type="submit" class="btn btn-outline-primary">search Shows</button>
             </div>
         </form>
